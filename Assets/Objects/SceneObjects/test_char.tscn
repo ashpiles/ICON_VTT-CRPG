@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://380oxnuebco6"]
+
+[ext_resource type="Texture2D" uid="uid://cfxqjnl455xhp" path="res://Assets/Sprites/test_guy.png" id="1_ixopm"]
+[ext_resource type="Script" path="res://Scripts/tile_movement.gd" id="1_wbgjs"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2hd1s"]
+height = 42.0
+
+[node name="test_char" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ixopm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 7)
+shape = SubResource("CapsuleShape2D_2hd1s")
+script = ExtResource("1_wbgjs")
