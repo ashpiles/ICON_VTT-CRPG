@@ -16,3 +16,15 @@ func _ready():
 # going ontop of the 
 # I'll just have an instantiator that goes up and down the tree to write characters
 # to memory
+
+
+# I will have a single node that loads in tile maps.
+# it can load things in chunks on all of the accesses
+# it can also manage the layers as players go up and down
+# I will have to make a special tile map custom resource
+# The resource can have a sort of heap and stack system for level loading
+# I can have an unaltered segment that is read from with the real version being loaded in
+# So that means an imbetween storage system
+# I'm going to use yaml
+# it's scriptable and portable
+# would have to use c# for this

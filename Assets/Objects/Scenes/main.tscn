@@ -1,13 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://dj2jqef0x1ldg"]
 
-[ext_resource type="PackedScene" uid="uid://cjalspd27gsjy" path="res://Assets/Objects/SceneObjects/map_manager.tscn" id="1_5yngc"]
+[ext_resource type="PackedScene" uid="uid://cjalspd27gsjy" path="res://Assets/Objects/SceneObjects/map_manager.tscn" id="1_jftn7"]
 [ext_resource type="PackedScene" uid="uid://380oxnuebco6" path="res://Assets/Objects/SceneObjects/test_char.tscn" id="2_5xl6l"]
 
 [node name="main" type="Node2D"]
 position = Vector2(75, 173)
 
-[node name="map" parent="." instance=ExtResource("1_5yngc")]
-position = Vector2(-1, 10)
+[node name="map_manager" parent="." instance=ExtResource("1_jftn7")]
 
 [node name="test_char" parent="." instance=ExtResource("2_5xl6l")]
 position = Vector2(175, -47)
