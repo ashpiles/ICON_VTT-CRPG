@@ -1,30 +1,35 @@
 extends Node2D
 
-@onready var tile_map = %tile_map
+var tile_layers:Array[Grid]
 
-#var layers =  tile_map.get_layers_count()
-
+# will go through the children of a node and add them to a grid
+# a grid is a custom object which manages an array of tiles
+# tiles are a custom object which holds properties
+# the layers get 
 func _ready():
-	pass
+	var layer = get_children()
 
-# move tile by tile
-# identify a tile
-# identify the location of entities
-# give terrain a walk status
-# the entity will have a speed stat
-# the map manager takes that speed stat and then applies it to each tile
-# going ontop of the 
-# I'll just have an instantiator that goes up and down the tree to write characters
-# to memory
+	for node in layer:
+		var grid = Grid.new()
+		var cells = node.get_used_cells()
 
+		for cell in cells:
+			var tile = Tile.new()
+			tile.grid_position = cell
+			tile.world_position = node.map_to_local(cell)
+			tile.tile_data = node.get_cell_tile_data(cell)
+			grid.add_tile(tile)
+		tile_layers.append(grid)
+	print_tile_layers()
 
-# I will have a single node that loads in tile maps.
-# it can load things in chunks on all of the accesses
-# it can also manage the layers as players go up and down
-# I will have to make a special tile map custom resource
-# The resource can have a sort of heap and stack system for level loading
-# I can have an unaltered segment that is read from with the real version being loaded in
-# So that means an imbetween storage system
-# I'm going to use yaml
-# it's scriptable and portable
-# would have to use c# for this
+func print_tile_layers():
+	for grid in tile_layers:
+		var tiles = grid.get_tiles()
+		for tile in tiles:
+			print(tile.grid_position)
+			print(tile.world_position)
+			print(tile.tile_data)
+
+# now I need a way to access tiles by world position and layer
+# then I need to create a sort of combined tile system
+# an array of dictionaries??

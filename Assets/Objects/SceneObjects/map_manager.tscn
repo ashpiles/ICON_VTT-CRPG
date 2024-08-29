@@ -1,13 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjalspd27gsjy"]
-
-[ext_resource type="PackedScene" uid="uid://dykthj4mv2kul" path="res://Assets/Objects/TileMaps/test.tmx" id="1_l5jjn"]
+[gd_scene format=3 uid="uid://cjalspd27gsjy"]
 
 [node name="map_manager" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [407.0]
 
 [node name="map_renderer" type="Node2D" parent="."]
-
-[node name="test" parent="map_renderer" instance=ExtResource("1_l5jjn")]
 
 [node name="map_events" type="Node2D" parent="."]
 

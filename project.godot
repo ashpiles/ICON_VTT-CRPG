@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 MultiplayerManager="*res://Scripts/multiplayer_manager.gd"
-Instantiator="*res://Scripts/instantiator.gd"
 
 [display]
 
